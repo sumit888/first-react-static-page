@@ -1,6 +1,6 @@
-import reactLogo from './assets/react.svg'
-import Header from './Header'
-import Footer from './Footer';
+import Header from './components/Header'
+import Footer from './components/Footer';
+import Facts from './components/Facts';
 
 
 
@@ -9,6 +9,7 @@ function App() {
   return(
     <>
       <Header />
+      <Facts />
       <Footer />
     </>
   );
