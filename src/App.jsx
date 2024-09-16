@@ -1,18 +1,23 @@
-import Header from './components/Header'
-import Footer from './components/Footer';
-import Facts from './components/Facts';
-
-
+import React, { useState } from 'react'
+import Navbar from "./components/Navbar"
+import Main from './components/Main'
 
 function App() {
-  //Since JSX only accepts one HTML tags so we've to use fragments or empty brackets to hold multiply components.
-  return(
-    <>
-      <Header />
-      <Facts />
-      <Footer />
-    </>
-  );
+    const [darkMode, setDarkMode] = useState(true)
+    
+    function toggleDarkMode() {
+        setDarkMode(prevMode => !prevMode)
+    }
+    
+    return (
+        <div className="container">
+            <Navbar 
+                darkMode={darkMode} 
+                toggleDarkMode={toggleDarkMode}
+            />
+            <Main darkMode={darkMode} />
+        </div>
+    )
 }
 
 export default App
